@@ -10,7 +10,7 @@ public static class Keys
 	public static class Actions
 	{
 		public const string CHANGE_PERSISTENCE = "change-persistence";
-		public const string CHANGE_AUTO_PERSIST = "auto-persist";
+		public const string CHANGE_AUTO_PERSIST = "change-auto-persist";
 		public const string EXIT = "exit";
 		
 		public const string LIST = "list";

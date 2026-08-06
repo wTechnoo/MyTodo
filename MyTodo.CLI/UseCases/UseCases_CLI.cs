@@ -39,14 +39,14 @@ public class UseCases_CLI : BaseUseCases
 	}
 
 	[UseCase(Keys.Actions.CHANGE_PERSISTENCE)]
-	public ICommand ChangePersistence(string persistenceType)
+	public ICommand ChangePersistence(string type)
 	{
-		return new ChangePersistenceCommand(_config, _errorMessenger, persistenceType);
+		return new ChangePersistenceCommand(_config, _errorMessenger, type);
 	}
 
 	[UseCase(Keys.Actions.CHANGE_AUTO_PERSIST)]
-	public ICommand ChangeAutoPersist(bool autoPersist)
+	public ICommand ChangeAutoPersist(bool value)
 	{
-		return new ChangeAutoPersistCommand(_config, _errorMessenger, autoPersist);
+		return new ChangeAutoPersistCommand(_config, _errorMessenger, value);
 	}
 }

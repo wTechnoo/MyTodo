@@ -17,9 +17,10 @@ var cliUseCases = config.From(todoUseCases, view, view);
 
 var useCases = UseCaseResolver.From(view, todoUseCases, cliUseCases);
 
-await useCases.Receive("list");
 if (config.Get(Keys.AUTO_PERSIST) == "true")
 	todoUseCases.LoadTodos().Execute();
+
+await useCases.Receive("list");
 
 while (true)
 {

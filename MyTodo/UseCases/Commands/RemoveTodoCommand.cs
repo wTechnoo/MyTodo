@@ -17,6 +17,10 @@ public record RemoveTodoCommand(TodoService TodoService, IErrorMessenger ErrorMe
 		{
 			TodoService.Remove(Id);
 		}
+		catch (KeyNotFoundException notFoundEx)
+		{
+			ErrorMessenger.SendError(Keys.Todos.Errors.REMOVE_TODO_NOT_FOUND, notFoundEx);
+		}
 		catch (Exception ex)
 		{
 			ErrorMessenger.SendError(Keys.Todos.Errors.REMOVE_FAILED, ex);

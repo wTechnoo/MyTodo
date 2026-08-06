@@ -10,6 +10,7 @@ public static class Keys
 			
 			public const string INVALID_ID = "Invalid todo id";
 
+			public const string REMOVE_TODO_NOT_FOUND = "Todo not found to be removed";
 			public const string REMOVE_FAILED = "Failed to remove todo";
 
 			public const string ADD_FAILED = "Failed to add todo";

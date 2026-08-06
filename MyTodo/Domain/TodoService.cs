@@ -50,7 +50,7 @@ public class TodoService : IEnumerable<Todo>
 	public void Remove(int id)
 	{
 		var todo = _todos.FirstOrDefault(x => x.Id == id);
-		if (todo == null) throw new InvalidOperationException("Todo not found");
+		if (todo == null) throw new KeyNotFoundException();
 		_todos.Remove(todo);
 	}
 }

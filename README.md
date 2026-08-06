@@ -18,5 +18,4 @@ MyTodo.CLI constructs the entire application and links usecases with views and i
 ### Frontend types 
 - Spectre CLI
 - Unity
-- Unity
 - WPF/Windows Forms

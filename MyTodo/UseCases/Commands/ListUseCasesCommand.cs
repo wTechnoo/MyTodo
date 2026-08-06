@@ -1,6 +1,8 @@
-namespace MyTodo.UseCases;
+using MyTodo.UseCases.Contracts;
 
-public record ListUseCasesCommand(IListTodoUseCasesView View, IReadOnlyList<string> UseCases) : ICommand
+namespace MyTodo.UseCases.Commands;
+
+public record ListUseCasesCommand(IListUseCasesView View, IReadOnlyList<string> UseCases) : ICommand
 {
 	public void Execute()
 	{

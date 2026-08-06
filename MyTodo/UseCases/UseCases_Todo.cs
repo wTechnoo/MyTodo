@@ -1,18 +1,19 @@
 using MyTodo.Domain;
 using MyTodo.UseCases.Commands;
+using MyTodo.UseCases.Contracts;
 
 namespace MyTodo.UseCases;
 
 public class UseCases_Todo : BaseUseCases
 {
-	readonly IListTodoUseCasesView _listTodoUseCasesView;
+	readonly IListUseCasesView _listUseCasesView;
 	readonly IShowTodosView _showTodosView;
 	readonly TodoService _todoService;
 
-	public UseCases_Todo(TodoService todoService, IListTodoUseCasesView listTodoUseCasesView, IShowTodosView showTodosView, IErrorMessenger errorMessenger)
+	public UseCases_Todo(TodoService todoService, IListUseCasesView listUseCasesView, IShowTodosView showTodosView, IErrorMessenger errorMessenger)
 	{
 		_todoService = todoService;
-		_listTodoUseCasesView = listTodoUseCasesView;
+		_listUseCasesView = listUseCasesView;
 		_showTodosView = showTodosView;
 		_errorMessenger = errorMessenger;
 	}
@@ -27,12 +28,6 @@ public class UseCases_Todo : BaseUseCases
 	public ICommand RemoveTodo(int id)
 	{
 		return new RemoveTodoCommand(_todoService, _errorMessenger, id);
-	}
-
-	[UseCase(Keys.Todos.Actions.LIST)]
-	public ICommand ListAllUseCases()
-	{
-		return new ListUseCasesCommand(_listTodoUseCasesView, Verbs());
 	}
 
 	[UseCase(Keys.Todos.Actions.LIST_TODOS)]

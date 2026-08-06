@@ -1,4 +1,4 @@
-namespace MyTodo.UseCases;
+namespace MyTodo.UseCases.Contracts;
 
 public interface ICommand
 {

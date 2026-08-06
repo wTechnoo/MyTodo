@@ -22,6 +22,14 @@ public class TodoService : IEnumerable<Todo>
 		return GetEnumerator();
 	}
 
+	public void Update(Todo todo)
+	{
+		var index = _todos.FindIndex(t => t.Id == todo.Id);
+
+		if (index != -1)
+			_todos[index] = todo;
+	}
+
 	public void Load()
 	{
 		_todos = _todoPersistence.Load().ToList();
@@ -45,10 +53,4 @@ public class TodoService : IEnumerable<Todo>
 		if (todo == null) throw new InvalidOperationException("Todo not found");
 		_todos.Remove(todo);
 	}
-}
-
-public interface ITodoPersistence
-{
-	void Save(IEnumerable<Todo> items);
-	IEnumerable<Todo> Load();
 }

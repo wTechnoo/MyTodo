@@ -25,8 +25,6 @@ public static class Keys
 			public const string REMOVE = "remove";
 			public const string LIST_TODOS = "list-todos";
 
-			public const string LIST = "list";
-
 			public const string SAVE = "save";
 			public const string LOAD = "load";
 		}

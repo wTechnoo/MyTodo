@@ -1,4 +1,4 @@
-namespace MyTodo.UseCases;
+namespace MyTodo.UseCases.Contracts;
 
 [AttributeUsage(AttributeTargets.Method)]
 public sealed class UseCaseAttribute : Attribute

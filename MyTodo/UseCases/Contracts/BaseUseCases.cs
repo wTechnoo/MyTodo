@@ -1,8 +1,9 @@
 using System.Globalization;
 using System.Reflection;
 using System.Text;
+using MyTodo.Domain;
 
-namespace MyTodo.UseCases;
+namespace MyTodo.UseCases.Contracts;
 
 public abstract class BaseUseCases
 {
@@ -11,20 +12,23 @@ public abstract class BaseUseCases
 
 	MethodInfo[] UseCaseMethods => MethodsOf(GetType());
 
-	public async Task Receive(string input)
+	public bool CanResolve(string input)
 	{
 		if (string.IsNullOrWhiteSpace(input))
-			return;
+			return false;
 
+		var (action, _) = Parse(input);
+
+		return UseCaseOf(action) != null;
+	}
+
+	public async Task Receive(string input)
+	{
 		var (action, args) = Parse(input);
-
-		var useCase = UseCaseMethods.FirstOrDefault(m => string.Equals(ActionOf(m), action, StringComparison.OrdinalIgnoreCase));
+		var useCase = UseCaseOf(action);
 
 		if (useCase == null)
-		{
-			_errorMessenger?.SendError(Keys.UseCases.Errors.UNKNOWN_COMMAND);
 			return;
-		}
 
 		var arguments = useCase.GetParameters().Select(p => Bind(p, args)).ToArray();
 
@@ -82,7 +86,6 @@ public abstract class BaseUseCases
 		var quoteChar = '\0';
 
 		foreach (var character in input)
-		{
 			if (!inQuotes && character is '"' or '\'')
 			{
 				inQuotes = true;
@@ -102,10 +105,7 @@ public abstract class BaseUseCases
 				}
 			}
 			else
-			{
 				current.Append(character);
-			}
-		}
 
 		if (current.Length > 0)
 			tokens.Add(current.ToString());
@@ -116,6 +116,11 @@ public abstract class BaseUseCases
 	static object Fallback(ParameterInfo parameter, object fallback)
 	{
 		return parameter.HasDefaultValue ? parameter.DefaultValue : fallback;
+	}
+
+	MethodInfo? UseCaseOf(string action)
+	{
+		return UseCaseMethods.FirstOrDefault(m => string.Equals(ActionOf(m), action, StringComparison.OrdinalIgnoreCase));
 	}
 
 	static MethodInfo[] MethodsOf(Type type)

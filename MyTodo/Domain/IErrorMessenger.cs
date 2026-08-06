@@ -1,4 +1,4 @@
-namespace MyTodo.UseCases;
+namespace MyTodo.Domain;
 
 public interface IErrorMessenger
 {

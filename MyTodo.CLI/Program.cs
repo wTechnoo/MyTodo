@@ -1,43 +1,27 @@
-﻿using MyTodo;
+﻿using MyTodo.CLI;
 using MyTodo.CLI.Infra;
 using MyTodo.Domain;
 using MyTodo.UseCases;
-using MyTodo.UseCases.Commands;
+using MyTodo.UseCases.Contracts;
+using Tools.Config.Entities;
+
+var config = new Config(defaultValues: new DefaultValues());
+var persistenceType = config.Get("persistence-type", "json");
 
 var view = new ConsoleView();
-var jsonPersistence = new JsonPersistence();
-var service = new TodoService(jsonPersistence);
-var useCases = service.From(view, view, view);
+var persistence = new PersistenceFactory().Create(persistenceType);
+var service = new TodoService(persistence);
 
-await useCases.Receive(Keys.Todos.Actions.LOAD);
+var todoUseCases = service.From(view, view, view);
+var cliUseCases = config.From(todoUseCases, view, view);
+
+var useCases = UseCaseResolver.From(view, todoUseCases, cliUseCases);
 
 await useCases.Receive("list");
 
-await useCases.Receive("add title=\"Buy milk\" description='2 liters, corner shop' done=true");
-await useCases.Receive("add title=Walk");
-await useCases.Receive("add title=\"Bad flag\" done=yse");
-await useCases.Receive(Keys.Todos.Actions.LIST_TODOS);
-
-await useCases.Receive(Keys.Todos.Actions.SAVE);
-
-internal class ConsoleView : IListTodoUseCasesView, IShowTodosView, IErrorMessenger
+while (true)
 {
-	public void SendError(string message, object? context = null)
-	{
-		Console.WriteLine("error: " + message);
-	}
+	var input = Console.ReadLine();
 
-	public IEnumerable<string> UseCases
-	{
-		set => Console.WriteLine("usecases: " + string.Join(", ", value));
-	}
-
-	public IEnumerable<Todo> Todos
-	{
-		set
-		{
-			foreach (var todo in value)
-				Console.WriteLine($"todo: id={todo.Id} title=[{todo.Title}] description=[{todo.Description}] done={todo.Done}");
-		}
-	}
+	await useCases.Receive(input);
 }

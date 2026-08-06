@@ -6,8 +6,8 @@ public class DefaultValues : IEnumerable<(string, string)>
 {
 	readonly List<(string, string)> _defaults =
 	[
-		("auto-persist", "false"),
-		("persistence-type", "json")
+		(Keys.AUTO_PERSIST, "false"),
+		(Keys.PERSISTENCE_TYPE, "json")
 	];
 
 	public IEnumerator<(string, string)> GetEnumerator()

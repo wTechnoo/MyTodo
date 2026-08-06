@@ -6,8 +6,8 @@ namespace MyTodo.UseCases;
 
 public static partial class UseCases
 {
-	public static UseCases_Todo From(this TodoService todoService, IShowTodosView showTodosView, IListUseCasesView listUseCasesView, IErrorMessenger errorMessenger)
+	public static UseCases_Todo From(this TodoService todoService, IShowTodosView showTodosView, IErrorMessenger errorMessenger)
 	{
-		return new UseCases_Todo(todoService, listUseCasesView, showTodosView, errorMessenger);
+		return new UseCases_Todo(todoService, showTodosView, errorMessenger);
 	}
 }

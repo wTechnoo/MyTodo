@@ -55,6 +55,9 @@ public abstract class BaseUseCases
 
 		if (parameter.ParameterType == typeof(bool))
 			return hasValue && bool.TryParse(raw, out var b) ? b : Fallback(parameter, false);
+		
+		if (parameter.ParameterType == typeof(bool?))
+			return hasValue && bool.TryParse(raw, out var nb) ? nb : Fallback(parameter, null);
 
 		return hasValue ? raw : Fallback(parameter, string.Empty);
 	}
@@ -113,7 +116,7 @@ public abstract class BaseUseCases
 		return tokens;
 	}
 
-	static object Fallback(ParameterInfo parameter, object fallback)
+	static object Fallback(ParameterInfo parameter, object? fallback)
 	{
 		return parameter.HasDefaultValue ? parameter.DefaultValue : fallback;
 	}

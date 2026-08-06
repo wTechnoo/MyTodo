@@ -16,8 +16,3 @@ public record ListTodosCommand(TodoService TodoService, IShowTodosView View, IEr
 		View.Todos = TodoService;
 	}
 }
-
-public interface IShowTodosView
-{
-	IEnumerable<Todo> Todos { set; }
-}

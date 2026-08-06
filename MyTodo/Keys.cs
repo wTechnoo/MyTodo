@@ -10,6 +10,9 @@ public static class Keys
 			
 			public const string INVALID_ID = "Invalid todo id";
 
+			public const string UPDATE_TODO_NOT_FOUND = "Todo not found to be updated";
+			public const string UPDATE_FAILED  = "Failed to update todos";
+			
 			public const string REMOVE_TODO_NOT_FOUND = "Todo not found to be removed";
 			public const string REMOVE_FAILED = "Failed to remove todo";
 
@@ -28,6 +31,7 @@ public static class Keys
 
 			public const string SAVE = "save";
 			public const string LOAD = "load";
+			public const string UPDATE = "update";
 		}
 	}
 

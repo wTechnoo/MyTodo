@@ -6,14 +6,12 @@ namespace MyTodo.UseCases;
 
 public class UseCases_Todo : BaseUseCases
 {
-	readonly IListUseCasesView _listUseCasesView;
 	readonly IShowTodosView _showTodosView;
 	readonly TodoService _todoService;
 
-	public UseCases_Todo(TodoService todoService, IListUseCasesView listUseCasesView, IShowTodosView showTodosView, IErrorMessenger errorMessenger)
+	public UseCases_Todo(TodoService todoService, IShowTodosView showTodosView, IErrorMessenger errorMessenger)
 	{
 		_todoService = todoService;
-		_listUseCasesView = listUseCasesView;
 		_showTodosView = showTodosView;
 		_errorMessenger = errorMessenger;
 	}
@@ -22,6 +20,12 @@ public class UseCases_Todo : BaseUseCases
 	public ICommand AddTodo(string title, string description, bool done = false)
 	{
 		return new AddTodoCommand(_todoService, _errorMessenger, title, description, done);
+	}
+	
+	[UseCase(Keys.Todos.Actions.UPDATE)]
+	public ICommand UpdateTodo(int id, string title, string description, bool? done)
+	{
+		return new UpdateTodoCommand(_todoService, _errorMessenger, id, title, description, done);
 	}
 
 	[UseCase(Keys.Todos.Actions.REMOVE)]

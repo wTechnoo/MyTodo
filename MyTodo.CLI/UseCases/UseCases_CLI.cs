@@ -20,9 +20,6 @@ public class UseCases_CLI : BaseUseCases
 		
 		_listUseCasesView = listUseCasesView;
 		_errorMessenger = errorMessenger;
-
-		if (_config.Get("auto-persist") == "true")
-			_todoUseCases.LoadTodos().Execute();
 	}
 
 	[UseCase(Keys.Actions.LIST)]

@@ -25,9 +25,11 @@ public class TodoService : IEnumerable<Todo>
 	public void Update(Todo todo)
 	{
 		var index = _todos.FindIndex(t => t.Id == todo.Id);
-
-		if (index != -1)
-			_todos[index] = todo;
+		
+		if(index == -1)
+			throw new KeyNotFoundException();
+		
+		_todos[index] = todo;
 	}
 
 	public void Load()

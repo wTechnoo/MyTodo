@@ -1,7 +1,7 @@
-using MyTodo.CLI.Persistences;
-using MyTodo.Domain;
+using Infrastructure.Persistences;
+using MyTodo.Contracts;
 
-namespace MyTodo.CLI.Infra;
+namespace Infrastructure;
 
 public class PersistenceFactory(string? path = null)
 {

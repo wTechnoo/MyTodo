@@ -1,11 +1,9 @@
-using MyTodo.CLI.Commands;
-using MyTodo.Domain;
+using MyTodo.CLI.UseCases.Commands;
+using MyTodo.Contracts;
 using MyTodo.UseCases;
-using MyTodo.UseCases.Commands;
-using MyTodo.UseCases.Contracts;
 using Tools.Config.Contracts;
 
-namespace MyTodo.CLI;
+namespace MyTodo.CLI.UseCases;
 
 public class UseCases_CLI : BaseUseCases
 {

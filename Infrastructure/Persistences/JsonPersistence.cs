@@ -1,7 +1,8 @@
+using MyTodo.Contracts;
 using MyTodo.Domain;
 using Newtonsoft.Json;
 
-namespace MyTodo.CLI.Persistences;
+namespace Infrastructure.Persistences;
 
 public class JsonPersistence : ITodoPersistence
 {

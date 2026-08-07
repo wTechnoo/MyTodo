@@ -1,4 +1,4 @@
-namespace MyTodo.UseCases.Contracts;
+namespace MyTodo.Contracts;
 
 public interface IListUseCasesView
 {

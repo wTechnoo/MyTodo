@@ -1,12 +1,7 @@
-namespace MyTodo.CLI;
+namespace MyTodo.CLI.UseCases;
 
 public static class Keys
 {
-	public static string AUTO_PERSIST = "auto-persist";
-	public static string PERSISTENCE_TYPE = "persistence-type";
-
-	public static string[] PersistenceTypes => ["json", "sqlite"];
-
 	public static class Actions
 	{
 		public const string CHANGE_PERSISTENCE = "change-persistence";

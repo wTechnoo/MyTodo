@@ -1,6 +1,6 @@
 using MyTodo.Domain;
 
-namespace MyTodo.UseCases.Commands;
+namespace MyTodo.Contracts;
 
 public interface IShowTodosView
 {

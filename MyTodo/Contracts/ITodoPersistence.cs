@@ -1,4 +1,6 @@
-namespace MyTodo.Domain;
+using MyTodo.Domain;
+
+namespace MyTodo.Contracts;
 
 public interface ITodoPersistence
 {

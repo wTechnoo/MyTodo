@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
-        <RootNamespace>Tools.Config</RootNamespace>
-        <AssemblyName>Tools.Config</AssemblyName>
+        <RootNamespace>Tools</RootNamespace>
+        <AssemblyName>Tools</AssemblyName>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>

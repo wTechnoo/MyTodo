@@ -1,6 +1,6 @@
-using MyTodo.Domain;
+using MyTodo.Contracts;
 
-namespace MyTodo.UseCases.Contracts;
+namespace MyTodo.UseCases;
 
 public class UseCaseResolver
 {

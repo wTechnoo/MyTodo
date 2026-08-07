@@ -1,8 +1,7 @@
-using MyTodo.Domain;
-using MyTodo.UseCases.Contracts;
+using MyTodo.Contracts;
 using Tools.Config.Contracts;
 
-namespace MyTodo.CLI.Commands;
+namespace MyTodo.CLI.UseCases.Commands;
 
 public record ChangeAutoPersistCommand(IConfig Config, IErrorMessenger ErrorMessenger, bool Value) : ICommand
 {
@@ -10,7 +9,7 @@ public record ChangeAutoPersistCommand(IConfig Config, IErrorMessenger ErrorMess
 	{
 		try
 		{
-			Config.Set(Keys.AUTO_PERSIST, Value.ToString());
+			Config.Set(Infrastructure.Keys.AUTO_PERSIST, Value.ToString());
 		}
 		catch (Exception ex)
 		{

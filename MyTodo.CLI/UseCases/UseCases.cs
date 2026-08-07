@@ -1,9 +1,8 @@
-using MyTodo.Domain;
+using MyTodo.Contracts;
 using MyTodo.UseCases;
-using MyTodo.UseCases.Contracts;
 using Tools.Config.Contracts;
 
-namespace MyTodo.CLI;
+namespace MyTodo.CLI.UseCases;
 
 public static partial class UseCases
 {

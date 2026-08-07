@@ -1,9 +1,11 @@
-﻿using MyTodo.CLI;
+﻿using Infrastructure;
+using MyTodo.CLI;
 using MyTodo.CLI.Infra;
+using MyTodo.CLI.UseCases;
 using MyTodo.Domain;
 using MyTodo.UseCases;
-using MyTodo.UseCases.Contracts;
 using Tools.Config.Entities;
+using Keys = Infrastructure.Keys;
 
 var config = new Config(defaultValues: new DefaultValues());
 var persistenceType = config.Get(Keys.PERSISTENCE_TYPE, "json");
@@ -25,8 +27,9 @@ await useCases.Receive("list");
 while (true)
 {
 	var input = Console.ReadLine();
+
 	if (input is null)
 		return;
-	
+
 	await useCases.Receive(input);
 }

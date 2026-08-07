@@ -1,4 +1,4 @@
-namespace MyTodo.Domain;
+namespace MyTodo.Contracts;
 
 public interface IErrorMessenger
 {

@@ -1,9 +1,9 @@
 using System.Globalization;
 using System.Reflection;
 using System.Text;
-using MyTodo.Domain;
+using MyTodo.Contracts;
 
-namespace MyTodo.UseCases.Contracts;
+namespace MyTodo.UseCases;
 
 public abstract class BaseUseCases
 {

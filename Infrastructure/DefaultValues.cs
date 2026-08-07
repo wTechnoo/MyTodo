@@ -1,12 +1,12 @@
 using System.Collections;
 
-namespace MyTodo.CLI.Infra;
+namespace Infrastructure;
 
 public class DefaultValues : IEnumerable<(string, string)>
 {
 	readonly List<(string, string)> _defaults =
 	[
-		(Keys.AUTO_PERSIST, "false"),
+		(Keys.AUTO_PERSIST, "true"),
 		(Keys.PERSISTENCE_TYPE, "json")
 	];
 

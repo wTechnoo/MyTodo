@@ -1,5 +1,5 @@
+using MyTodo.Contracts;
 using MyTodo.Domain;
-using MyTodo.UseCases.Contracts;
 
 namespace MyTodo.UseCases.Commands;
 

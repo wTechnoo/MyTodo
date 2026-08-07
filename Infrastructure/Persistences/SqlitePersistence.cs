@@ -1,7 +1,8 @@
 using Microsoft.Data.Sqlite;
+using MyTodo.Contracts;
 using MyTodo.Domain;
 
-namespace MyTodo.CLI.Persistences;
+namespace Infrastructure.Persistences;
 
 public class SqlitePersistence : ITodoPersistence
 {

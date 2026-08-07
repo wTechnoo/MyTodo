@@ -1,9 +1,8 @@
-using MyTodo.Domain;
+using MyTodo.Contracts;
 using MyTodo.UseCases;
-using MyTodo.UseCases.Contracts;
 using Tools.Config.Contracts;
 
-namespace MyTodo.CLI;
+namespace MyTodo.CLI.UseCases.Commands;
 
 public record ExitCommand(UseCases_Todo TodoUseCases, IConfig Config, IErrorMessenger ErrorMessenger) : ICommand
 {

@@ -1,3 +1,5 @@
+using MyTodo.Contracts;
+
 namespace MyTodo.Domain;
 
 public class NoTodoPersistence : ITodoPersistence

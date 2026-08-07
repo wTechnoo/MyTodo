@@ -7,10 +7,10 @@ Quick study, the todos are an excuse. What I actually wanted was to see how far 
 ## Three projects, arrows pointing one way
 
 ```
-(View/Infrastructure)
-MyTodo.CLI     ->     MyTodo (Domain)
-               ->     Config (Tools)
-MyTodo.CLI constructs the entire application and links usecases with views and infrastructure
+(View)
+MyTodo.CLI/MyTodo.WPF     ->     MyTodo (Domain)
+                          ->     Config (Tools)
+CLI and WPF constructs the entire application and links usecases with views and infrastructure
 ```
 ## Goals
 - Command history with undo and redos

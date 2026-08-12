@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{851A5D5D-B3A0-47F7-B8B5-D46AF5A3B5FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTodo.ConsoleUI", "MyTodo.ConsoleUI\MyTodo.ConsoleUI.csproj", "{C6491336-4378-4F5D-B85D-999310214FE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,18 @@ Global
 		{851A5D5D-B3A0-47F7-B8B5-D46AF5A3B5FE}.Release|x64.Build.0 = Release|Any CPU
 		{851A5D5D-B3A0-47F7-B8B5-D46AF5A3B5FE}.Release|x86.ActiveCfg = Release|Any CPU
 		{851A5D5D-B3A0-47F7-B8B5-D46AF5A3B5FE}.Release|x86.Build.0 = Release|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Debug|x64.Build.0 = Debug|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Debug|x86.Build.0 = Debug|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Release|x64.ActiveCfg = Release|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Release|x64.Build.0 = Release|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Release|x86.ActiveCfg = Release|Any CPU
+		{C6491336-4378-4F5D-B85D-999310214FE1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

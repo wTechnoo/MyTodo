@@ -15,7 +15,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.5-beta1" />
+        <Reference Include="ConsoleButtons">
+            <HintPath>..\..\ConsoleButtons\ConsoleButtons\bin\Debug\ConsoleButtons.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
 </Project>

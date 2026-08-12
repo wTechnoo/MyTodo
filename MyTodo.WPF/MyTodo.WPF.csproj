@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Config\Config.csproj" />
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
       <ProjectReference Include="..\MyTodo\MyTodo.csproj" />
       <ProjectReference Include="..\Tools\Tools.csproj" />

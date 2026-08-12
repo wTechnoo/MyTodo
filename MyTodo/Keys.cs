@@ -33,6 +33,14 @@ public static class Keys
 			public const string LOAD = "load";
 			public const string UPDATE = "update";
 		}
+
+		public static class Arguments
+		{
+			public const string ID = "id";
+			public const string TITLE = "title";
+			public const string DESCRIPTION = "description";
+			public const string DONE = "done";
+		}
 	}
 
 	public static class UseCases
